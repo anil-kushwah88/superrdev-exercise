@@ -7,8 +7,9 @@ export function useTasks(query, status, page, pageSize) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+    useEffect(() => {
     setLoading(true);
+    setError(null);
 
     fetchTasks({ query, status, page, pageSize })
       .then((data) => {
